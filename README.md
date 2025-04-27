@@ -17,6 +17,7 @@
 - [Technical Details](#technical-details)
 - [Future Improvements](#future-improvements)
 - [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ---
 
@@ -59,3 +60,91 @@ It aims to bridge communication gaps by providing a simple and practical hand si
    ```bash
    git clone https://github.com/your-username/hand-sign-language-recognition-system.git
    cd hand-sign-language-recognition-system
+   ```
+
+2. **Install Required Packages:**
+   ```bash
+   pip install opencv-python mediapipe scikit-learn numpy pillow pyttsx3
+   ```
+
+---
+
+## How to Use
+
+1. **Collect Images:**
+   ```bash
+   python collect_imgs.py
+   ```
+   - Choose Right or Left hand.
+   - Capture images for each alphabet A-Z.
+
+2. **Create Dataset:**
+   ```bash
+   python create_dataset.py
+   ```
+   - Generates a `.pickle` file with extracted landmarks.
+
+3. **Train Classifier:**
+   ```bash
+   python train_classifier.py
+   ```
+   - Trains the Random Forest Classifier and saves the model.
+
+4. **Launch GUI:**
+   ```bash
+   python menu.py
+   ```
+   - Start recognition, view recognized text, and convert text to speech!
+
+---
+
+## Technical Details
+
+- **Hand Landmark Extraction:**  
+  Using **MediaPipe Hands** to detect and extract 21 keypoints per hand.
+
+- **Model Architecture:**  
+  Random Forest Classifier from Scikit-learn.
+
+- **Threshold for Prediction:**  
+  Displays predictions only if confidence ≥ 70%.
+
+- **GUI Framework:**  
+  Built using **Tkinter** for simplicity and ease of use.
+
+---
+
+## Future Improvements
+
+- Extend system to recognize **words** or **sentences**.
+- Integrate **Deep Learning models** (CNNs, LSTMs).
+- Support for more complex **dynamic gestures**.
+- Improve the user interface and recognition speed.
+- Add **language options** for text-to-speech.
+
+---
+
+## Acknowledgements
+
+- **OpenCV** for real-time computer vision.
+- **MediaPipe** for easy and efficient hand tracking.
+- **Scikit-learn** for model training and evaluation.
+- **Tkinter** for creating a clean and simple GUI.
+- **pyttsx3** for offline text-to-speech support.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.  
+Feel free to use, modify, and distribute this project for personal and commercial purposes.
+
+[Read the License here.](https://opensource.org/licenses/MIT)
+
+---
+
+> **Maintainer:** Ahmad Akeel Khan  
+> Contributions, suggestions, and issue reports are warmly welcome!  
+> Let's build more accessible technologies together!
+
+---
